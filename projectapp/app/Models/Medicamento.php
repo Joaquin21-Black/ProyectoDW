@@ -10,6 +10,7 @@ class Medicamento extends Model
     public $table = "medicamento";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'med_nombre',

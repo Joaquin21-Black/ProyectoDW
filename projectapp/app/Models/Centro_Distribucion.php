@@ -11,6 +11,7 @@ class Centro_Distribucion extends Model
     public $table = 'centro_distribucion';
     protected $primaryKey = "id";
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'cd_codigo',

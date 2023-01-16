@@ -17,4 +17,9 @@ class FarmaciaController extends Controller
     {
         return $this->inteRepo->registrarFarmacia($request);
     }
+
+    public function eliminarFarmacia(Request $request)
+    {
+        return $this->inteRepo->eliminarFarmacia($request);
+    }
 }

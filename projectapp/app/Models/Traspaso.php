@@ -10,6 +10,7 @@ class Traspaso extends Model
     public $table = "traspaso";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'tras_estado'

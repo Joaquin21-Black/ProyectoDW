@@ -72,7 +72,7 @@ class FarmaciaRepository
             }
             $farm->delete();
 
-            return response()->json(["mensaje"=>"Se elimino la farmacia","Eliminados"=>"Adios"], Response::HTTP_OK);
+            return response()->json(["mensaje"=>"Se elimino la farmacia","Eliminado"=>"Adios"], Response::HTTP_OK);
         }
         catch (Exception $e)
         {

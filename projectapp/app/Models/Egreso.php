@@ -10,6 +10,7 @@ class Egreso extends Model
     public $table = "egreso";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'egre_fecha'

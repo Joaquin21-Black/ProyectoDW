@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('/farmacia')->group(function () use ($router){
     $router->post('/crear', [FarmaciaController::class, 'registrarFarmacia']);
+    $router->post('/eliminar', [FarmaciaController::class, 'eliminarFarmacia']);
 });

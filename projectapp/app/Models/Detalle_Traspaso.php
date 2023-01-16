@@ -10,6 +10,7 @@ class Detalle_Traspaso extends Model
     public $table = "detalle_traspaso";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'det_tra_lote',

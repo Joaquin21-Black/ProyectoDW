@@ -11,6 +11,7 @@ class Farmacia extends Model
     public $table = "farmacia";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'farm_nombre',

@@ -10,6 +10,7 @@ class Detalle_Ingreso extends Model
     public $table = "detalle_ingreso";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'det_ing_lote',

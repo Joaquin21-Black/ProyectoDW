@@ -10,6 +10,7 @@ class Stock_cd extends Model
     public $table = "stock_cd";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'scd_cantidad',

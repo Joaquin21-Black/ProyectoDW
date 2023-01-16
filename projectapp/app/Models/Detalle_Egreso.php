@@ -10,6 +10,7 @@ class Detalle_Egreso extends Model
     public $table = "detalle_egreso";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'det_egr_lote',

@@ -10,6 +10,7 @@ class Ingreso extends Model
     public $table = "ingreso";
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     public $fillable = [
         'ingr_fecha'
