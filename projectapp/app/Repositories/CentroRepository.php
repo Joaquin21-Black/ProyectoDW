@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Centro_Distribucion;
+use App\Models\Stock_cd;
 
 use Exception;
 use Illuminate\Http\Response;
@@ -73,4 +74,18 @@ class CentroRepository
             return response()->json(["error" => $e], Response::HTTP_BAD_REQUEST);
         }
     }
+
+    public function showStock($request)
+    {
+        try
+        {
+            $stock = Stock_cd::where('scd_centro_dist', $request->id)->get();
+            return response()->json(["mensaje"=>"Se lista el stock","datos" => $stock], Response::HTTP_OK);
+        }
+        catch (Exception $e)
+        {
+            return response()->json(["error" => $e], Response::HTTP_BAD_REQUEST);
+        }
+    }
+    
 }
