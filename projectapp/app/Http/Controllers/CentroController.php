@@ -18,6 +18,11 @@ class CentroController extends Controller
         return $this->inteRepo->registrarCentro($request);
     }
 
+    public function modificarCentro(Request $request)
+    {
+        return $this->inteRepo->eliminarCentro($request);
+    }
+
     public function eliminarCentro(Request $request)
     {
         return $this->inteRepo->eliminarCentro($request);

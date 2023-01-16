@@ -18,6 +18,11 @@ class MedicamentoController extends Controller
         return $this->inteRepo->registrarMedicamento($request);
     }
 
+    public function modificarMedicamento(Request $request)
+    {
+        return $this->inteRepo->eliminarMedicamento($request);
+    }
+
     public function eliminarMedicamento(Request $request)
     {
         return $this->inteRepo->eliminarMedicamento($request);

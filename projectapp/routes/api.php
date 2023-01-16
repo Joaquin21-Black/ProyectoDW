@@ -24,3 +24,15 @@ Route::prefix('/farmacia')->group(function () use ($router){
     $router->post('/modificar', [FarmaciaController::class, 'modificarFarmacia']);
     $router->post('/eliminar', [FarmaciaController::class, 'eliminarFarmacia']);
 });
+
+Route::prefix('/medicamento')->group(function () use ($router){
+    $router->post('/crear', [MedicamentoController::class, 'registrarMedicamento']);
+    $router->post('/modificar', [MedicamentoController::class, 'modificarMedicamento']);
+    $router->post('/eliminar', [MedicamentoController::class, 'eliminarMedicamento']);
+});
+
+Route::prefix('/centro')->group(function () use ($router){
+    $router->post('/crear', [CentroController::class, 'registrarCentro']);
+    $router->post('/modificar', [CentroController::class, 'modificarCentro']);
+    $router->post('/eliminar', [CentroController::class, 'eliminarCentro']);
+});
