@@ -14,6 +14,12 @@ class FarmaciaRepository
     {
         try
         {
+            // $farm = Farmacia::findorFail($request->id);
+            // isset($request->farm_nombre) && $farm->farm_nombre = $request->farm_nombre;
+            // isset($request->farm_direccion) && $farm->farm_direccion = $request->farm_direccion;
+            // isset($request->farm_mail) && $farm->farm_mail = $request->farm_mail;
+            // $farm->save();
+            
             $farm = Farmacia::create([
                 "farm_nombre" => $request->farm_nombre,
                 "farm_direccion" => $request->farm_direccion,
