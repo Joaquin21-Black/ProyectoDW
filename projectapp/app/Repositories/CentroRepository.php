@@ -33,7 +33,7 @@ class CentroRepository
             $cd = Centro_Distribucion::findorFail($request->id);
             isset($request->cd_codigo) && $cd->cd_codigo = $request->cd_codigo;
             isset($request->cd_direccion) && $cd->cd_direccion = $request->cd_direccion;
-            isset($request->cd_telefono) && $cd->cd_telefono = $request->descd_telefonocripcion;
+            isset($request->cd_telefono) && $cd->cd_telefono = $request->cd_telefono;
             $cd->save();
 
             $cd = Centro_Distribucion::where('id', $request->id)
