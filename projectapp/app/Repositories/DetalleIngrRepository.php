@@ -12,7 +12,7 @@ use Faker\Provider\Medical;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
-class IngresoRepository
+class DetalleIngrRepository
 {
     public function registroDetalle($request)
     {
