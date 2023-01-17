@@ -14,7 +14,7 @@ use Faker\Provider\Medical;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
-class EgresoRepository
+class DetalleEgreRepository
 {
     public function registroDetalle($request)
     {
