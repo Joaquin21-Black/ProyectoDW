@@ -20,7 +20,7 @@ class EgresoRepository
             $farm = Farmacia::select('id')->where('id', $request->id_farm)->get();
 
             $egreso = Egreso::create([
-                'egre_fecha' => $request->fecha ,
+                'egre_fecha' => $request->fecha,
                 'egre_centro_dist' => $cd,
                 'egre_farmacia' => $farm,
             ]);

@@ -8,10 +8,14 @@ use App\Repositories\DetalleIngrRepository;
 
 class IngresoController extends Controller
 {
-    protected IngresoController $inteRepo;
-    public function __construct(IngresoController $inteRepo)
+    protected IngresoRepository $inteRepo;
+    public function __construct(IngresoRepository $inteRepo)
     {
         $this->inteRepo = $inteRepo;
     }
-
+    
+    public function registroIngreso(Request $request)
+    {
+        return $this->inteRepo->registroIngreso($request);
+    }
 }
