@@ -18,8 +18,9 @@ class IngresoRepository
     {
         try
         {
-            $ingreso = Ingreso::select('id')->where('id', $request->id_ingr)->get();
-            $medicamento = Medicamento::select('id')->where('id', $request->id_med)->get();
+            $ingreso = Ingreso::select('id')->where('id', $request->id_ingr)->first();
+            $ing_cd = Ingreso::select('ingr_centro_dist')->where('id', $request->id_ingr)->first();
+            $medicamento = Medicamento::select('id')->where('id', $request->id_med)->first();
 
             $detalle = Detalle_Ingreso::create([
                 'det_ing_lote' => $request->lote,
@@ -29,12 +30,24 @@ class IngresoRepository
             ]);
 
             // Se actualiza la cantidad del stock
-            // TO DO: verificar que el stock existe, si no existe crearlo
-            $stock = Stock_cd::select('scd_cantidad')->where('scd_id_medicamento', $medicamento)->get();
-            $dif = $stock + $detalle->det_ing_cantidad;
-            $stock = Stock_cd::where('scd_id_medicamento', $medicamento)->update([
+            $s = Stock_cd::where('scd_id_medicamento', $medicamento)->first();
+            if(isset($s))
+            {
+                $stock = Stock_cd::select('scd_cantidad')->where('scd_id_medicamento', $medicamento)->get();
+                $dif = $stock + $detalle->det_ing_cantidad;
+                $stock = Stock_cd::where('scd_id_medicamento', $medicamento)->update([
                 'scd_cantidad' => $dif
             ]);
+            }
+            else
+            {
+                $stock = Stock_cd::create([
+                    'scd_cantidad' => $detalle->det_ing_cantidad,
+                    'scd_lote' => $detalle->det_ing_lote,
+                    'scd_id_medicamento' => $medicamento,
+                    'scd_centro_dist' => $ing_cd,
+                ]);
+            }
 
             return response()->json(["mensaje"=>"Se guardaron los detalles", "datos" => $detalle], Response::HTTP_OK);
         }
