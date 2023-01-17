@@ -14,15 +14,16 @@ class FarmaciaRepository
     {
         try
         {
-            $farm = Farmacia::get();
-            isset($request->farm_nombre) && $farm->farm_nombre = $request->farm_nombre;
-            $farm->save();
+            // $farm = Farmacia::get();
+            // isset($request->farm_nombre) && $farm->farm_nombre = $request->farm_nombre;
+            // $farm->save();
             
             $farm = Farmacia::create([
                 "farm_nombre" => $request->farm_nombre,
                 "farm_direccion" => $request->farm_direccion,
                 "farm_mail" => $request->farm_mail
             ]);
+
             return response()->json(["mensaje"=>"Se crea una farmacia","datos" => $farm], Response::HTTP_OK);
         }
         catch (Exception $e)
